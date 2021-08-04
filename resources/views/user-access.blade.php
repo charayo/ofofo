@@ -36,13 +36,16 @@
         }
 
     </style>
-
-    <div class="">
-        @include('signup');
-    </div>
-    <div class="shadow ">
-        @include('login');
-    </div>
+    @if (Request::is('signup'))
+        <div class="">
+            @include('signup');
+        </div>
+    @endif
+    @if (Request::is('account'))
+        <div class="">
+            @include('login');
+        </div>
+    @endif
 
 
 @endsection

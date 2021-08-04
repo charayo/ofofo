@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
 use PharIo\Manifest\AuthorElement;
 
@@ -20,9 +22,11 @@ use PharIo\Manifest\AuthorElement;
 Route::post('accountProcess', [AuthController::class, 'accountProcess'])->name('accountProcess');
 Route::post('loginRequest', [AuthController::class, 'loginRequest'])->name('loginRequest');
 Route::post('blogPost', [PostController::class, 'blogPost'])->name('blogPost');
+// Route::get();
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Post::all();
+    return view('welcome', ['posts'=>$posts]);
 });
 Route::get('hello', function () {
     return view('hello',['name'=>'Teslim','eamil'=>'teslim@mail.com']);
