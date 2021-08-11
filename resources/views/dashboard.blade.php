@@ -35,7 +35,7 @@
             <h3>Naa me sabi</h3>
         </div>
         <div class="col-md-10"> 
-            @include('includes.postboard')
+            @include('includes.postboard',['myPath'=>'blogPost', 'data'=>''])
         </div>
     </div>
     <div>

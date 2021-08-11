@@ -32,6 +32,8 @@ class AuthController extends Controller{
         $password = $userDetails->password;
         if(Auth::attempt(['email' => $email, 'password' => $password], )){
             return redirect()->to('/');
+        }else{
+            echo 'incorrect login details';
         }
     }
     

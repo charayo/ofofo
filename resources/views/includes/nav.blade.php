@@ -1,5 +1,5 @@
 @section('nav')
-<nav class="navbar navbar-expand-md navbar-dark " style="background-color: black">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: black">
   <!-- Brand -->
   <a class="navbar-brand" href="#"><h1>Ofofo</h1></a>
 

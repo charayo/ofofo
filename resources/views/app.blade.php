@@ -32,17 +32,16 @@
     </head>
     <body class="antialiased">
         @section('nav')
-            <div>
+            <div class="m-0 p-0">
                 @include('includes.nav')
             </div>
         @show
-          {{-- @if (Auth::check(''))
-              
-          @endif --}}
         @yield('home')      
         @yield('cont')
         @yield('account')
         @yield('dashboard')
+        @yield('allPost')
+        @yield('edit-page')
     </body>
 </html>
 {{-- @stack('scripts') --}}

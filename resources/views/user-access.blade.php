@@ -36,14 +36,14 @@
         }
 
     </style>
-    @if (Request::is('signup'))
+    @if ($type == 'signup')
         <div class="">
-            @include('signup');
+            @include('signup')
         </div>
     @endif
-    @if (Request::is('account'))
+    @if ($type == 'login')
         <div class="">
-            @include('login');
+            @include('login')
         </div>
     @endif
 
