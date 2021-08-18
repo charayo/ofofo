@@ -1,5 +1,7 @@
 @extends('app')
 @section('account')
+@section('nav')
+@stop
     <style>
         .bg-side {
             background-size: cover;

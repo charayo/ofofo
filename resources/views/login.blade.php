@@ -30,7 +30,7 @@
                         </div>
                         <div class="text-center mt-3">
                             <span class="mt-3">Don't have an account yet?</span>
-                            <strong><a href="" style="text-decoration: none;" class="signUpLink">Create Account</a></strong>
+                            <strong><a href="/account/signup" style="text-decoration: none;" class="signUpLink">Create Account</a></strong>
                         
                         </div>
 

@@ -36,5 +36,11 @@ class AuthController extends Controller{
             echo 'incorrect login details';
         }
     }
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
     
 }

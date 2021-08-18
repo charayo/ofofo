@@ -14,15 +14,17 @@ class PostController extends Controller
             'post_details' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,jiff|image',
             'post_title' => 'required',
+            'author' => 'required',
         ]);
 
         $imageName = time() . '.' . $post->image->extension();
-        $post->image->move(public_path('images', $imageName));
+        $post->image->move(public_path('images'), $imageName);
         $post = Post::create([
             'post_title' => $post->post_title,
             'post_details' => $post->post_details,
             'post_category' => $post->post_category,
             'image' => $imageName,
+            'author' => $post->author,
             'user_id' => auth()->user()->id,
         ]);
         return redirect('posts');
@@ -53,9 +55,11 @@ class PostController extends Controller
             'post_details' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png,jiff|image',
             'post_title' => 'required',
+            'author' => 'required',
         ]);
+
         $imageName = time() . '.' . $post->image->extension();
-        $post->image->move(public_path('images', $imageName));
+        $post->image->move(public_path('images'), $imageName);
 
         $data = Post::find($post->post_id);
         // return $post->post_id;
@@ -63,6 +67,7 @@ class PostController extends Controller
         $data->post_details = $post->post_details;
         $data->post_category = $post->post_category;
         $data->image = $imageName;
+        $data->author = $post->author;
         $data->user_id = auth()->user()->id;
         $data->save();
         return redirect('posts');

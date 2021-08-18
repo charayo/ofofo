@@ -14,6 +14,7 @@ class Post extends Model
         'post_category',
         'image',
         'user_id',
+        'author',
         
     ];
 }

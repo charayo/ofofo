@@ -8,6 +8,7 @@
                     <option value="localnews">Local News</option>
                     <option value="globalnews">Global news</option>
                     <option value="gossips">Gossip</option>
+                    <option value="tech">Tech News</option>
                 </select>
                 @error('post_category')
                 <small class="text-danger">{{$message}}</small>
@@ -32,6 +33,12 @@
                 <small class="text-danger">{{$message}}</small>
                 @enderror
         </div>
+        <div class="form-group">
+            <input type="text" class="form-control mb-2" name="author" placeholder="Author's Name" value = "{{$data['author']}}">
+            @error('author')
+                <small class="text-danger">{{$message}}</small>
+            @enderror
+        </div>
             <div class="text-center mx-auto">
                 <button class="btn btn-dark bg-transparent text-dark font-weight-bold" name="post_submit">Update Post</button>
             </div>
@@ -48,6 +55,7 @@
                     <option value="localnews">Local News</option>
                     <option value="globalnews">Global news</option>
                     <option value="gossips">Gossip</option>
+                    <option value="tech">Tech News</option>
                 </select>
                 @error('post_category')
                 <small class="text-danger">{{$message}}</small>
@@ -70,6 +78,12 @@
                 @error('post_details')
                 <small class="text-danger">{{$message}}</small>
                 @enderror
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control mb-2" name="author" placeholder="Author's Name">
+            @error('author')
+                <small class="text-danger">{{$message}}</small>
+            @enderror
         </div>
             <div class="text-center mx-auto">
                 <button class="btn btn-dark bg-transparent text-dark font-weight-bold" name="post_submit">Add Post</button>

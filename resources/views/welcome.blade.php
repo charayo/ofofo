@@ -1,7 +1,7 @@
 @extends('app')
 @section('home')
     <div class="container">
-        @include('includes.post-mini-carousel')
+        @include('includes.post-mini-carousel',$posts)
         @include('includes.header-one')
     </div>
     

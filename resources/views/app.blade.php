@@ -35,6 +35,7 @@
             <div class="m-0 p-0">
                 @include('includes.nav')
             </div>
+            
         @show
         @yield('home')      
         @yield('cont')

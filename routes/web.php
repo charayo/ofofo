@@ -22,6 +22,7 @@ use PharIo\Manifest\AuthorElement;
 
 Route::post('accountProcess', [AuthController::class, 'accountProcess'])->name('accountProcess');
 Route::post('loginRequest', [AuthController::class, 'loginRequest'])->name('loginRequest');
+Route::get('logout', [AuthController::class, 'logout']);
 Route::post('blogPost', [PostController::class, 'blogPost'])->name('blogPost');
 // Route::get();
 
@@ -36,9 +37,15 @@ Route::get('account/{type}', function ($type) {
     return view('user-access',['type'=>$type]);
 });
 Route::get('dashboard', function () {
+    if (Auth::user()) {
+        return view('dashboard');
+    } else {
+        return view('user-access',['type'=>'login']);
+        // return (`<div><h1 class="text-danger">Access Denied!!!<h1> <strong>Unauthorised User</strong></div>`);
+    }
     
-    return view('dashboard');
-})->middleware('auth');
+    
+});
 Route::get('delete/{id}', [PostController::class, 'deletePost']);
 Route::get('edit/{id}', [PostController::class, 'editPost']);
 Route::post('edit', [PostController::class, 'updatePost']);

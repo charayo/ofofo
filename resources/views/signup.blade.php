@@ -1,5 +1,5 @@
-<div class="p-5 m-5">
-    <div class="row m-5 mx-auto p-0 shadow-lg sm-user-account w-75 my-radius">
+<div class="">
+    <div class="row m-1 mx-auto p-0 shadow-lg sm-user-account w-75 my-radius">
 
         <div class="d-none d-md-flex col-md-6 bg-side left-radius bg-signup">
            <div class="overlay">
@@ -45,7 +45,7 @@
                                 <small class="text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <a class=" loginLink" href="" style="text-decoration: none;" >already have an account? sign in</a>
+                        <a class=" loginLink" href="/account/login" style="text-decoration: none;" >already have an account? sign in</a>
                         <br>
                         <small class="text-success">By creating an account you agree to our <a href="#" class="" style="text-decoration: none;">Terms &
                             Privacy.</a>
@@ -61,4 +61,5 @@
             
         </div>
     </div>
+    <span  style="position: absolute; top:0; left:0;" class="glyphicon glyphicon-home"><a class="nav-link" href="/"> Go Home</a></span>
 </div>

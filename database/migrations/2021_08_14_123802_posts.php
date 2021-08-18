@@ -16,10 +16,11 @@ class Posts extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('post_title');
-            $table->string('post_details');
+            $table->longText('post_details');
             $table->string('post_category');
             $table->string('image');
             $table->integer('user_id');
+            $table->string('author');
             $table->timestamps();
         });
     }
